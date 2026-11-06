@@ -107,3 +107,24 @@ pre, code, kbd,
   font-size: 0.95rem;
   line-height: 1.5;
 }
+
+/* Layout & Sidebar Fix: Ensure sidebars stay confined within viewport and never bleed into footer */
+.md-main__inner {
+  min-height: calc(100vh - 12rem);
+}
+
+@media screen and (min-width: 60em) {
+  .md-sidebar {
+    height: auto;
+  }
+  .md-sidebar__scrollwrap {
+    max-height: calc(100vh - 5.5rem);
+    overflow-y: auto;
+  }
+}
+
+.md-footer {
+  position: relative;
+  z-index: 2;
+  clear: both;
+}

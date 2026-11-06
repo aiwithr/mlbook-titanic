@@ -26,7 +26,6 @@ theme:
         name: Switch to light mode
   font: false
   features:
-    - navigation.sections
     - navigation.indexes
     - navigation.top
     - navigation.tracking
