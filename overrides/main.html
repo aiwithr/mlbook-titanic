@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block site_meta %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="author" content="Rakibul Hassan (রকিবুল হাসান)">
+  <meta name="creator" content="Rakibul Hassan">
+  <meta name="publisher" content="Rakibul Hassan">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="keywords" content="হাতেকলমে মেশিন লার্নিং, টাইটানিক প্রজেক্ট, মেশিন লার্নিং, রকিবুল হাসান, Rakibul Hassan, aiwithr, R programming, Python, Kaggle, Titanic ML, ডেটা সায়েন্স">
+  <meta name="description" content="{% if page and page.meta and page.meta.description %}{{ page.meta.description }}{% elif page and page.title and not page.is_homepage %}{{ page.title }} | হাতেকলমে মেশিন লার্নিং: টাইটানিক প্রজেক্ট - রকিবুল হাসান।{% else %}{{ config.site_description }}{% endif %}">
+  {% if page.canonical_url %}
+    <link rel="canonical" href="{{ page.canonical_url }}">
+  {% endif %}
+  {% if page.previous_page %}
+    <link rel="prev" href="{{ page.previous_page.url | url }}">
+  {% endif %}
+  {% if page.next_page %}
+    <link rel="next" href="{{ page.next_page.url | url }}">
+  {% endif %}
+{% endblock %}
+
+{% block extrahead %}
+  <link rel="icon" href="https://aiwithr.github.io/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="https://aiwithr.github.io/favicon.ico" type="image/x-icon">
+
+  <!-- Google Fonts Preconnect for fastest font loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&family=Hind+Siliguri:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
+
+  <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
+  <meta property="og:site_name" content="হাতেকলমে মেশিন লার্নিং: টাইটানিক প্রজেক্ট | রকিবুল হাসান">
+  <meta property="og:type" content="{% if page.is_homepage %}book{% else %}article{% endif %}">
+  <meta property="og:title" content="{% if page and page.meta and page.meta.title %}{{ page.meta.title }}{% elif page and page.title and not page.is_homepage %}{{ page.title }} | হাতেকলমে মেশিন লার্নিং{% else %}হাতেকলমে মেশিন লার্নিং: টাইটানিক প্রজেক্ট | By Rakibul Hassan{% endif %}">
+  <meta property="og:description" content="{% if page and page.meta and page.meta.description %}{{ page.meta.description }}{% elif page and page.title and not page.is_homepage %}{{ page.title }}: হাতেকলমে মেশিন লার্নিং - টাইটানিক প্রজেক্ট। রকিবুল হাসানের বই।{% else %}{{ config.site_description }}{% endif %}">
+  <meta property="og:url" content="{{ page.canonical_url }}">
+  <meta property="og:locale" content="bn_BD">
+  <meta property="og:image" content="https://aiwithr.github.io/mlbook-titanic/images/assets_2F-LggvvWRY6v017WN8ink_2F-Lq-gI8Iww199o8X_Q_4dc8793439.jpg">
+  <meta property="og:image:alt" content="হাতেকলমে মেশিন লার্নিং">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@raqueeb">
+  <meta name="twitter:creator" content="@raqueeb">
+  <meta name="twitter:title" content="{% if page and page.meta and page.meta.title %}{{ page.meta.title }}{% elif page and page.title and not page.is_homepage %}{{ page.title }} | হাতেকলমে মেশিন লার্নিং{% else %}হাতেকলমে মেশিন লার্নিং: টাইটানিক প্রজেক্ট | By Rakibul Hassan{% endif %}">
+  <meta name="twitter:description" content="{% if page and page.meta and page.meta.description %}{{ page.meta.description }}{% elif page and page.title and not page.is_homepage %}{{ page.title }}: হাতেকলমে মেশিন লার্নিং বই।{% else %}{{ config.site_description }}{% endif %}">
+  <meta name="twitter:image" content="https://aiwithr.github.io/mlbook-titanic/images/assets_2F-LggvvWRY6v017WN8ink_2F-Lq-gI8Iww199o8X_Q_4dc8793439.jpg">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://aiwithr.github.io/#author",
+        "name": "Rakibul Hassan",
+        "alternateName": "রকিবুল হাসান",
+        "url": "https://aiwithr.github.io/",
+        "sameAs": [
+          "https://github.com/raqueeb",
+          "https://github.com/aiwithr",
+          "https://twitter.com/raqueeb",
+          "https://linkedin.com/in/raqueeb/",
+          "https://medium.com/@raqueeb"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://aiwithr.github.io/#website",
+        "url": "https://aiwithr.github.io/",
+        "name": "AI with R",
+        "publisher": {
+          "@id": "https://aiwithr.github.io/#author"
+        },
+        "inLanguage": "bn"
+      }{% if page.is_homepage %},
+      {
+        "@type": "Book",
+        "@id": "https://aiwithr.github.io/mlbook-titanic/#book",
+        "url": "https://aiwithr.github.io/mlbook-titanic/",
+        "name": "হাতেকলমে মেশিন লার্নিং: টাইটানিক প্রজেক্ট",
+        "alternateName": "Hands-on Machine Learning: Titanic Project",
+        "inLanguage": "bn",
+        "bookFormat": "EBook",
+        "author": {
+          "@id": "https://aiwithr.github.io/#author"
+        },
+        "isPartOf": {
+          "@id": "https://aiwithr.github.io/#website"
+        }
+      }{% else %},
+      {
+        "@type": "Chapter",
+        "@id": "{{ page.canonical_url }}#chapter",
+        "url": "{{ page.canonical_url }}",
+        "name": "{{ page.title }}",
+        "inLanguage": "bn",
+        "isPartOf": {
+          "@type": "Book",
+          "@id": "https://aiwithr.github.io/mlbook-titanic/#book",
+          "name": "হাতেকলমে মেশিন লার্নিং: টাইটানিক প্রজেক্ট",
+          "url": "https://aiwithr.github.io/mlbook-titanic/"
+        },
+        "author": {
+          "@id": "https://aiwithr.github.io/#author"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "{{ page.canonical_url }}#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "হোম",
+            "item": "https://aiwithr.github.io/mlbook-titanic/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ page.title }}",
+            "item": "{{ page.canonical_url }}"
+          }
+        ]
+      }{% endif %}
+    ]
+  }
+  </script>
+{% endblock %}

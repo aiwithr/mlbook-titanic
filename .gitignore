@@ -1,0 +1,9 @@
+site/
+__pycache__/
+*.pyc
+.cache/
+.DS_Store
+*.swp
+migrate.py
+build_nav.py
+test_inspect.py
